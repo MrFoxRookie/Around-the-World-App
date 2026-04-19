@@ -1,0 +1,88 @@
+.popup__content {
+  position: relative;
+  width: 430px;
+  height: 330px;
+}
+
+.form {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  padding: 34px 36px 34px;
+  position: relative;
+  margin: 0;
+  border-radius: 3%;
+  box-sizing: border-box;
+}
+
+.form__close-button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.form__fields {
+  margin: 54px 0 58px;
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+  padding: 0;
+  border: 0;
+}
+
+.form__field {
+  position: relative;
+}
+
+.form__label {
+  display: none;
+}
+
+.form__input {
+  font-size: 14px;
+  height: 27px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 1px solid gray;
+}
+
+.form__input_invalid {
+  border-bottom: 1px solid red;
+}
+
+.form__error {
+  font-size: 14px;
+  color: red;
+  position: absolute;
+  top: 27px;
+  left: 0px;
+}
+
+.form__submit-button {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 50px;
+  background-color: #ffffff;
+  border: 1px solid gray;
+  color: gray;
+  cursor: not-allowed;
+}
+
+.form:valid .form__submit-button {
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.form:valid .form__submit-button:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 530px) {
+  .popup__content {
+    margin: 0 10px 0;
+  }
+}

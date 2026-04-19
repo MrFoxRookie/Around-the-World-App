@@ -1,0 +1,33 @@
+.popup__content_content_image {
+  width: 433px;
+  height: 540px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.popup__card-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.popup__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popup__card-title {
+  font-size: 12px;
+  margin: 10px 0 0;
+}
+
+@media screen and (max-width: 530px) {
+  .popup__content_content_image {
+    max-width: 433px;
+    height: auto;
+
+    margin: 10px;
+  }
+}

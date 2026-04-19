@@ -1,0 +1,7 @@
+Cosas por hacer
+
+<!-- 1. Arreglar el login para que devuelva que el correo ya esta en uso. -->
+
+2. Hacer que el token solo funcione acorde al id del usuario correspondiente al hacer GET users/id
+3. Hacer que el login devuelva un error especifico en caso de que se envie password o email vacio.
+4. Hacer que getAllCards devuelva solo la carta.
