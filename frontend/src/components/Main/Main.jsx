@@ -4,7 +4,7 @@ import NewCard from "./Popup/Form/NewCard/NewCard";
 import EditProfile from "../Main/Popup/Form/EditProfile/EditProfile";
 import EditAvatar from "./Popup/Form/EditAvatar/EditAvatar";
 import Card from "./Components/Card/Card";
-import { api } from "../../utils/Api";
+import { api } from "../../utils/api";
 //Importación de Hooks//
 import { useState, useEffect, useContext } from "react";
 

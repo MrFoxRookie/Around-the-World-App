@@ -17,10 +17,7 @@ require("dotenv").config({
 
 const { PORT = 3001 } = process.env;
 
-mongoose.connect(process.env.MONGODB_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGODB_URL);
 
 app.use(
   cors({
