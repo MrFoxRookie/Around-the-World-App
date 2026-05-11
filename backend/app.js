@@ -21,7 +21,10 @@ mongoose.connect(process.env.MONGODB_URL);
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: [
+      "http://localhost:3000",
+      "https://around-the-world-app-kappa.vercel.app/signin",
+    ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   }),
