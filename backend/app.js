@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
@@ -11,9 +10,14 @@ const cardsRouter = require("./routes/cards");
 const { auth } = require("./middlewares/auth");
 
 const app = express();
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV || "development"}`,
+});
+
 const { PORT = 3001 } = process.env;
 
-mongoose.connect("mongodb://localhost:27017/aroundb", {
+mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -23,7 +27,7 @@ app.use(
     origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
-  })
+  }),
 );
 
 app.use(express.json());

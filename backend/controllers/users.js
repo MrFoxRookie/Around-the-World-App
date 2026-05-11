@@ -35,8 +35,8 @@ module.exports.createUser = (req, res, next) => {
       if (err.name === "ValidationError") {
         return next(
           new BadRequestError(
-            "Formato para la información del usuario invalido"
-          )
+            "Formato para la información del usuario invalido",
+          ),
         );
       }
       if (err.code === 11000) {
@@ -54,7 +54,7 @@ module.exports.updateUser = (req, res, next) => {
       new: true,
       runValidators: true,
       upsert: false,
-    }
+    },
   )
     .orFail(() => new NotFoundError("Id no coincide con ningún usuario"))
     .then((user) => res.send({ data: user }))
@@ -64,7 +64,7 @@ module.exports.updateUser = (req, res, next) => {
       }
       if (err.name === "ValidationError") {
         return next(
-          new BadRequestError("Datos inválidos para actualizar el usuario")
+          new BadRequestError("Datos inválidos para actualizar el usuario"),
         );
       }
       return next(err);
@@ -79,7 +79,7 @@ module.exports.updateUserAvatar = (req, res, next) => {
       new: true,
       runValidators: true,
       upsert: false,
-    }
+    },
   )
     .orFail(() => new NotFoundError("Id no coincide con ningún usuario"))
     .then((user) => res.send({ data: user }))
@@ -89,7 +89,7 @@ module.exports.updateUserAvatar = (req, res, next) => {
       }
       if (err.name === "ValidationError") {
         return next(
-          new BadRequestError("El formato del link del avatar es inválido")
+          new BadRequestError("El formato del link del avatar es inválido"),
         );
       }
       return next(err);
@@ -102,16 +102,16 @@ module.exports.login = async (req, res, next) => {
     const user = await User.findOne({ email }).select("+password");
     if (!user) {
       return next(
-        new UnauthorizedError("Contraseña o correo electrónico incorrecto")
+        new UnauthorizedError("Contraseña o correo electrónico incorrecto"),
       );
     }
     const matched = await bcrypt.compare(password, user.password);
     if (!matched) {
       return next(
-        new UnauthorizedError("Contraseña o correo electrónico incorrecto")
+        new UnauthorizedError("Contraseña o correo electrónico incorrecto"),
       );
     }
-    const token = jwt.sign({ _id: user._id }, "string-random", {
+    const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });
     res.send({ token });

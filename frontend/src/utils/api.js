@@ -55,26 +55,6 @@ class Api {
       });
   }
 
-  // getCardList() {
-  //   return fetch(`${this.baseUrl}/cards/`, {
-  //     method: "GET",
-  //     headers: this._getHeaders(),
-  //   })
-  //     .then((res) => {
-  //       if (!res.ok) {
-  //         throw new Error("Error de respuesta de getInitialCards()");
-  //       }
-  //       return res.json();
-  //     })
-  //     .then((data) => {
-  //       // console.log("Cartas iniciales obtenidas correctamente", data);
-  //       return data;
-  //     })
-  //     .catch((err) => {
-  //       console.log("Error en getInitialCards()", err);
-  //     });
-  // }
-
   getCardList() {
     return fetch(`${this.baseUrl}/cards`, {
       method: "GET",
@@ -167,7 +147,7 @@ class Api {
     }).then((res) => {
       if (!res.ok) {
         throw new Error(
-          "Error al cambiar imagen del avatar del usuario en el servidor"
+          "Error al cambiar imagen del avatar del usuario en el servidor",
         );
       }
       return res.json();
@@ -175,5 +155,5 @@ class Api {
   }
 }
 
-const baseUrl = "http://localhost:3001";
+const baseUrl = import.meta.env.VITE_BASE_URL;
 export const api = new Api(baseUrl);

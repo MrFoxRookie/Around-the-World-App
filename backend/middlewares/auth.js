@@ -9,7 +9,7 @@ module.exports.auth = (req, res, next) => {
   const token = authorization.replace("Bearer ", "");
   let payload;
   try {
-    payload = jwt.verify(token, "string-random");
+    payload = jwt.verify(token, process.env.JWT_SECRET);
   } catch (err) {
     return res.status(403).send({ message: "Usuario no autorizado" });
   }
