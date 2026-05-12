@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3001";
+export const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export function registerNewUser(email, password) {
   return fetch(`${BASE_URL}/signup`, {
@@ -26,7 +26,7 @@ export function loginUser(email, password) {
         throw new Error("No se ha proporcionado uno o más campos");
       if (res.status === 401)
         throw new Error(
-          "No se ha encontrado al usuario con el correo electrónico especificado"
+          "No se ha encontrado al usuario con el correo electrónico especificado",
         );
       throw new Error(`Error desconocido: ${res.status}`);
     }
@@ -44,7 +44,7 @@ export function tokenAuthorization(jwt) {
   }).then((res) => {
     if (res.status === 400) {
       throw new Error(
-        "Error 400: Token no proporcionado o proporcionado en el formato incorrecto"
+        "Error 400: Token no proporcionado o proporcionado en el formato incorrecto",
       );
     }
     if (res.status === 401) {
