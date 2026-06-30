@@ -14,5 +14,6 @@ Incluye un sistema de autenticación y registro de usuarios mediante JWT, lo que
 - Integración completa de backend utilizando Node.js, Express y base de datos MongoDB.
 
 **Aprendizajes clave**
+
 Este proyecto me permitió fortalecer mis habilidades en desarrollo full-stack, especialmente en la implementación de sistemas de autenticación con JWT y en la gestión de datos con MongoDB.
 Además, integré correctamente el frontend con el backend utilizando Node.js y Express, aplicando buenas prácticas de desarrollo para mantener un código limpio, escalable y mantenible.
