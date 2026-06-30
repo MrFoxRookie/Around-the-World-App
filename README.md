@@ -1,6 +1,7 @@
 **Around the World**
 
 **Descripción**
+
 Este proyecto full-stack fue desarrollado durante mi formación en el stack tecnológico de la plataforma. La aplicación fue construida utilizando HTML, CSS y JavaScript en el frontend, y Node.js, Express y MongoDB en el backend.
 Incluye un sistema de autenticación y registro de usuarios mediante JWT, lo que permite a los usuarios gestionar su perfil y administrar sus tarjetas de forma dinámica, facilitando el intercambio de contenido con otros usuarios dentro de la plataforma.
 
